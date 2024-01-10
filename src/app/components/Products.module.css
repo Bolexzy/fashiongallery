@@ -1,0 +1,11 @@
+.item_box:hover button {
+  opacity: 100;
+  /* Transition properties */
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.item_box button:hover {
+  transform: scale(1.05); /* Add any hover-specific transforms */
+}

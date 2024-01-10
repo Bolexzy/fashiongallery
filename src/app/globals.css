@@ -1,27 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-hex: #f2f2f2;
+  --foreground-nav: #000;
+  --background-nav: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --foreground-nav: #000;
+    --background-nav: #000;
   }
+} */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
+  background: var(--background-hex);
+  font-family: "Alegreya Sans SC", "Alegreya Sans", sans-serif;
+}
+
+.navbar_header {
+  color: var(--foreground-nav);
+  /* background-color: var(--background-nav); */
+}
+
+.carousel_slider {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0,
+    #000 5%,
+    #000 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0,
+    #000 5%,
+    #000 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.carousel_slider_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  animation: slide 30s linear infinite;
+}
+
+.carousel_slider:hover .carousel_slider_container {
+  animation-play-state: paused;
+}
+/* 
+.carousel_slider_container img {
+  width: 50px;
+  max-width: 50px;
+} */
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.feature {
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    117deg,
+    rgba(255, 255, 255, 0.36) 11.45%,
+    rgba(247, 247, 247, 0.64) 104.09%,
+    rgba(255, 255, 255, 0) 106.5%
+  );
+  background-blend-mode: soft-light;
+}
+
+.scroll_background {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/fashion5.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer_bg {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    #151311;
+}
+
+.cartSidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
