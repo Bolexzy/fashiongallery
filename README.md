@@ -1,8 +1,10 @@
 # Fashion Gallery
 
 Fashion Gallery is a full-featured e-commerce application built with React, Next.js, TypeScript, DaisyUI and Tailwind CSS. The application includes product listing, product details, shopping cart functionality, and a visually appealing carousel component. It is designed with a focus on user experience and responsive design.
+[live link](https://fashiongallery.vercel.app)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Features
 
